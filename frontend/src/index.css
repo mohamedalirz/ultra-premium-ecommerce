@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-white overflow-x-hidden;
+  }
+  
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-dark;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/50 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary;
+  }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl transition-all duration-300 hover:border-neon/50;
+  }
+  
+  .neon-text {
+    @apply text-neon animate-glow;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary via-neon to-cyber bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-white shadow-lg hover:shadow-neon/50 transition-all duration-300 hover:scale-105;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 border-2 border-neon rounded-full font-semibold text-neon hover:bg-neon/10 transition-all duration-300 hover:scale-105;
+  }
+}
